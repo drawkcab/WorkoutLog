@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @workout.date %>
+</p>
+<p>
+<strong>Feeling:</strong>
+<%= @workout.workout %>
+</p>
+<p>
+  <strong>Felt:</strong>
+  <%= @workout.mood %>
+</p>
+
+<p>
+  <strong>Total time:</strong>
+  <%= @workout.mood %>
+</p>
+
+
+<%= link_to 'Edit', edit_workout_path(@workout) %> |
+<%= link_to 'Back', workouts_path %>
+<%= link_to 'Destroy', @workout, method: :delete, data: { confirm: 'Are you sure?' } %>
