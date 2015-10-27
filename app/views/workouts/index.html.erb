@@ -1,1 +1,16 @@
-<h1> Workout index </h1>
+<center><h1> Workout Log </h1></center>
+
+<div class="container">
+<center>
+    <% @workouts.each do |workout| %>
+
+  <p><h2><%= link_to workout.date.strftime("%m-%d-%Y"), workout %></h2></p>
+        <h3><%= workout.workout %></h3>
+
+       <small><%= link_to 'Edit', edit_workout_path(workout), :class =>"btn btn-sm btn-info" %> </small>
+
+    <% end %>
+    </center>
+</div>
+<br>
+<center><%= link_to 'New Workout', new_workout_path, :class => "btn btn-default" %></center>

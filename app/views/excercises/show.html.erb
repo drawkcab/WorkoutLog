@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<center>
+
+<strong>Rating:</strong>
+<%= @excercise.name %>
+
+<p>
+  <strong>Sets:</strong>
+  <%= @excercise.set %>
+</p>
+
+<p>
+  <strong>Reps:</strong>
+  <%= @excercise.reps %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @excercise.weight %>
+</p>
+
+
+<%= link_to 'Edit', edit_excercise_path(@excercise) %> |
+<% if @excercise.workout.nil? %>
+  <%= link_to 'Back', excercises_path %>
+<% else %>
+  <%= link_to 'Back', @excercise.workout %>
+<% end %>
+</center>

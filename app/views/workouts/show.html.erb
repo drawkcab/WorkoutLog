@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<center>
 <p>
   <strong>Date:</strong>
-  <%= @workout.date %>
+  <%= @workout.date.strftime("%m-%d-%Y") %>
 </p>
 <p>
 <strong>Feeling:</strong>
@@ -15,10 +15,29 @@
 
 <p>
   <strong>Total time:</strong>
-  <%= @workout.mood %>
+  <%= @workout.length %>
 </p>
 
+<% @workout.excercises.each do |excercise| %>
+ <p>
+   Excercise Name:
+ <%= excercise.name %>
+ <br>
+ Sets:
+ <%= excercise.set %>
+ <br>
+ Reps:
+ <%= excercise.reps %>
+ <br>
+ Weight:
+ <%= excercise.weight %>
+ <br>
+ </p>
+<% end %>
+
+ <%= render 'excercises/form' %>
 
 <%= link_to 'Edit', edit_workout_path(@workout) %> |
-<%= link_to 'Back', workouts_path %>
+<%= link_to 'Back', workouts_path %> |
 <%= link_to 'Destroy', @workout, method: :delete, data: { confirm: 'Are you sure?' } %>
+</center>
